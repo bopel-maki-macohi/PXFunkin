@@ -1,0 +1,44 @@
+{
+    "anims": [
+        {
+            "name": "idle",
+            "frames": [
+                0,
+                1
+            ],
+            "fps": 6
+        },
+        {
+            "name": "singLEFT",
+            "frames": [
+                2,
+                3
+            ],
+            "fps": 6
+        },
+        {
+            "name": "singDOWN",
+            "frames": [
+                4,
+                5
+            ],
+            "fps": 6
+        },
+        {
+            "name": "singUP",
+            "frames": [
+                6,
+                7
+            ],
+            "fps": 6
+        },
+        {
+            "name": "singRIGHT",
+            "frames": [
+                8,
+                9
+            ],
+            "fps": 6
+        }
+    ]
+}
