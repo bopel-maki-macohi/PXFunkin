@@ -1,6 +1,4 @@
-package px.data.characters;
-
-import px.data.characters.CharacterAnimationData;
+package px.data.character;
 
 typedef CharacterData =
 {

@@ -1,0 +1,14 @@
+{
+  "dependencies": [
+    {
+      "name": "flixel",
+      "type": "haxelib",
+      "version": null
+    },
+    {
+      "name": "flxrhythmconductor",
+      "type": "haxelib",
+      "version": null
+    }
+  ]
+}

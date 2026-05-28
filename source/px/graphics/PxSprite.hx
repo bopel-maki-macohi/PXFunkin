@@ -4,9 +4,9 @@ import flixel.FlxSprite;
 
 class PxSprite extends FlxSprite
 {
-	public function playAnim(anim:String)
+	public function playAnim(anim:String, ?force:Bool)
 	{
-		animation.play(anim);
+		animation.play(anim, force);
 	}
 
 	public function setScale(scale:Float = 4)

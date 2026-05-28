@@ -1,15 +1,16 @@
 package px.play.objects;
 
+import flixel.FlxG;
 import flixel.util.FlxDirection;
 import haxe.Json;
-import px.data.characters.CharacterData;
+import px.data.character.CharacterData;
 import px.graphics.PxSprite;
 
 using StringTools;
 
 class Character extends PxSprite
 {
-	var data:CharacterData;
+	public var data(default, null):CharacterData;
 
 	override public function new(character:String = 'boyfriend', ?x:Float = 0, ?y:Float = 0)
 	{
@@ -51,18 +52,39 @@ class Character extends PxSprite
 		}
 	}
 
-	public function playSingAnimation(direction:FlxDirection, ?suffix:String = '')
+	public function playSingAnimation(direction:FlxDirection, ?suffix:String = '', ?force:Null<Bool>)
 	{
+		final forceSing:Bool = ((force != null) ? force : true);
+
 		switch (direction)
 		{
 			case LEFT:
-				playAnim('singLEFT$suffix');
+				playAnim('singLEFT$suffix', forceSing);
 			case DOWN:
-				playAnim('singDOWN$suffix');
+				playAnim('singDOWN$suffix', forceSing);
 			case UP:
-				playAnim('singUP$suffix');
+				playAnim('singUP$suffix', forceSing);
 			case RIGHT:
-				playAnim('singRIGHT$suffix');
+				playAnim('singRIGHT$suffix', forceSing);
 		}
+		
+		if (animation.name.startsWith('sing'))
+			holdQueue = 0.25;
+	}
+
+	public var holdQueue:Float = 0;
+
+	public function dance()
+	{
+		if (holdQueue <= 0)
+			playAnim('idle');
+	}
+
+	override function update(elapsed:Float)
+	{
+		if (holdQueue > 0)
+			holdQueue -= elapsed;
+
+		super.update(elapsed);
 	}
 }

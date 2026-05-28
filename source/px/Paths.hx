@@ -11,6 +11,9 @@ class Paths
 	public static inline function getContent(path:String):String
 		return File.getContent(path);
 
+	public static inline function audio(path:String):String
+		return '$path.ogg';
+
 	public static inline function png(path:String):String
 		return '$path.png';
 
@@ -25,4 +28,10 @@ class Paths
 
 	public static inline function getCharacterPath(path:String):String
 		return getPlayPath('characters/$path');
+
+	public static inline function getSongsPath(path:String):String
+		return getPlayPath('songs/$path');
+
+	public static inline function getSongPath(song:String, path:String):String
+		return getSongsPath('${song.toLowerCase()}/$path');
 }
