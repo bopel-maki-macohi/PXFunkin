@@ -1,0 +1,11 @@
+{
+	"search.exclude": {
+		"export/**/*.*": true
+	},
+	"haxe.importsSortOrder": "non-project -> project",
+	"[haxe]": {
+		"editor.codeActionsOnSave": {
+			"source.sortImports": "always"
+		}
+	},
+}
